@@ -17,19 +17,18 @@ CLayer VLayer;
 //d::string g_sFilename = "../../data/wanhao-i3-plus-air-duct-v6_0.15mm_PLA_WANA.gcode";
 //d::string g_sFilename = "../../data/v7.gcode";
 //d::string g_sFilename = "../../data/v6.gcode";
-std::string g_sFilename = "../../data/GT2_Belt_Tensioner_-_Belt_Side_0.15mm_PLA_PRIMA.gcode";
+//d::string g_sFilename = "../../data/GT2_Belt_Tensioner_-_Belt_Side_0.15mm_PLA_PRIMA.gcode";
 //d::string g_sFilename = "../../data/pflanzschild_0.15mm_PLA_PRIMA.gcode";
 //d::string g_sFilename = "../../data/1layer.gcode";
 //d::string g_sFilename = "../../data/ff-MK3S.gcode";
-//d::string g_sFilename = "../../data/t6.gcode";
+std::string g_sFilename = "../../data/t7.gcode";
 
 
 
 using CTokens  = std::vector<std::string>;
 using CCodes   = std::vector<std::pair<char, double>>;
 
-double xi{0}, xa{0}, yi{0}, ya{0}, zi{0}, za{0}, e{0}, me{0}, mn{0};
-double xl{0}, yl{0}, zl{0}, el{0};
+double xi{0}, xa{0}, yi{0}, ya{0}, zi{0}, za{0}, e{0}, me{0}, mn{0}, xl{0}, yl{0}, zl{0}, el{0};
 
 struct SCommand
     {
@@ -122,11 +121,12 @@ struct SCommand
                 {
                 mn += std::sqrt( x*x + y*y + z*z )/2;
                 }
+*/
         xi=std::min(xi, cro.X/2+100); xa=std::max(xa, cro.X/2+100);
         yi=std::min(yi, cro.Y/2+300); ya=std::max(ya, cro.Y/2+300);
         zi=std::min(zi, cro.Z/2+000); za=std::max(za, cro.Z/2+000);
         e += cro.E/2;
-*/  
+  
         }
     static void G21 (SCommand const & cro) {}; // Millimeter Units
     static void G90 (SCommand const & cro) {}; // Absolute Positioning
@@ -170,7 +170,14 @@ CTokens Tokenize(std::string const & sLine)
 
 int main(int argc, char* argv[])
     {
-    std::ifstream fGCode(g_sFilename.c_str()/*, std::ios::in*/);
+//    if (argc > 1) std::cout << "args: " << argc << "; " << argv[1] << '\n';
+
+//  g_sFilename = std::string(argv[1]);
+
+    g_sFilename="/run/media/manfred/Download+Filme/CFFFP_Hollow_Pyramid.gcode";
+
+//  std::ifstream fGCode(g_sFilename.c_str()/*, std::ios::in*/);
+    std::ifstream fGCode(*argv/*, std::ios::in*/);
     std::string   sLine;
 
     while( std::getline(fGCode, sLine))
@@ -193,7 +200,7 @@ int main(int argc, char* argv[])
     auto app = Gtk::Application::create(argc, argv, "org.gtkmm.cairo.tut");
 
     Gtk::Window window;
-    window.resize(800,600);
+    window.resize(1024,768);
     window.set_title("Novoprint GCode Visualizer");
 
     CCanvas area;

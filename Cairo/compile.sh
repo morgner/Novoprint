@@ -2,7 +2,7 @@
 
 SD=`pwd`
 SD=${SD##/*/}
-EN="CairoTut-$SD"
+EN="CairoGUI-$SD"
 
 clang `pkg-config --libs --cflags gtkmm-3.0 cairomm-1.0` -O3 -std=c++2a -lstdc++ -lm *.cpp -o "$EN"
 

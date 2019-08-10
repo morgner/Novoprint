@@ -1,5 +1,5 @@
-#ifndef A
-#define A
+#ifndef CANVAS_H
+#define CANVAS_H
 
 #include <gtkmm.h>
 #include <gtkmm/drawingarea.h>
@@ -11,13 +11,15 @@
 
 struct SPoint
     {
-    SPoint(double x, double y, double z, double e) : x(x), y(y), z(z), e(e) {}
     double x,y,z,e;
+
+    SPoint(double const & x, double const & y, double const & z, double const & e)
+         : x(x), y(y), z(z), e(e)
+        {}
     };
 
 using CLayer = std::vector<SPoint>;
 extern CLayer VLayer;
-
 
 class CCanvas : public Gtk::DrawingArea
     {
@@ -38,4 +40,4 @@ class CCanvas : public Gtk::DrawingArea
 
     }; // CCanvas
 
-#endif // A
+#endif // CANVAS_H

@@ -1,7 +1,6 @@
 #include "canvas.h"
 
-
-
+extern double xi, xa, yi, ya, zi, za, e, me, mn, xl, yl, zl, el;
 
 
 bool CCanvas::on_draw(Cairo::RefPtr<Cairo::Context> const & cr)
@@ -14,12 +13,16 @@ bool CCanvas::on_draw(Cairo::RefPtr<Cairo::Context> const & cr)
     cr->set_line_width(1);
 
     // line crossing the whole window
+
+    double sx=width /(xa-xi);
+    double sy=height/(ya-yi);
+    double s = (sx>sy)?sx:sy;
     for (auto const & a:VLayer)
         {
         if (a.e <= 0)
-            cr->move_to(000+2*a.x, 000+2*a.y);
+            cr->move_to(s*(a.x-xi), s*(a.y-yi));
         else
-            cr->line_to(000+2*a.x, 000+2*a.y);
+            cr->line_to(s*(a.x-xi), s*(a.y-yi));
         }
     // cr->line_to(width, height);
     cr->stroke();

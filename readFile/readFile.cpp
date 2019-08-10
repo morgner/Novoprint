@@ -160,6 +160,7 @@ CTokens Tokenize(std::string const & sLine)
 
 int main(int argc, char* argv[])
     {
+    g_sFilename="/run/media/manfred/Download+Filme/CFFFP_Hollow_Pyramid.gcode";
     std::ifstream fGCode(g_sFilename.c_str()/*, std::ios::in*/);
     std::string   sLine;
 
@@ -301,6 +302,140 @@ PID settings:  0°>
 M301 P33.00 I1.00 D-59.00
 SD card ok     0°> 
 enqueing "M84" 0°> 
+
+==============================================================================
+
+WARNING:root:RPC server bound on non-default port 7979
+Welcome to the printer console! Type "help" for a list of available commands.
+offline> connect
+No port specified - connecting to /dev/ttyUSB0 at 115200bps
+start          
+Printer is now online
+External Reset 
+Marlin bugfix-1.1.x
+Last Updated: 2018-07-31 | Author: @brandstaetter, @grbd
+Compiled: Mar 21 2019
+Free Memory: 2736  PlannerBufferBytes: 1232
+V55 stored settings retrieved (987 bytes; crc 64945)
+G21    ; (mm)  
+M149 C ; Units in Celsius
+Filament settings: Disabled
+M200 D1.75     
+M200 D0        
+Steps per unit:
+M92 X80.00 Y80.00 Z80.00 E384.00
+Maximum feedrates (units/s):
+M203 X200.00 Y200.00 Z200.00 E35.00
+Maximum Acceleration (units/s2):
+M201 X1000 Y1000 Z1000 E25
+Acceleration (units/s2): P<print_accel> R<retract_accel> T<travel_accel>
+M204 P800.00 R800.00 T800.00
+Advanced: Q<min_segment_time_us> S<min_feedrate> T<min_travel_feedrate> X<max_x_jerk> Y<max_y_jerk> Z<max_z_jerk> E<max_e_jerk>
+M205 Q20000 S100.00 T200.00 X5.00 Y5.00 Z5.00 E5.00
+Auto Bed Leveling:
+M420 S0        
+G29 W I0 J0 Z-0.05036
+G29 W I1 J0 Z0.01064
+G29 W I2 J0 Z-0.00448
+G29 W I3 J0 Z-0.07344
+G29 W I4 J0 Z-0.06994
+G29 W I5 J0 Z-0.07254
+G29 W I6 J0 Z-0.03701
+G29 W I7 J0 Z0.04896
+G29 W I8 J0 Z0.15501
+G29 W I0 J1 Z-0.00477
+G29 W I1 J1 Z-0.04681
+G29 W I2 J1 Z0.01975
+G29 W I3 J1 Z-0.02473
+G29 W I4 J1 Z-0.04568
+G29 W I5 J1 Z-0.06011
+G29 W I6 J1 Z0.01127
+G29 W I7 J1 Z0.07236
+G29 W I8 J1 Z0.13076
+G29 W I0 J2 Z0.08610
+G29 W I1 J2 Z0.00919
+G29 W I2 J2 Z-0.01242
+G29 W I3 J2 Z-0.03076
+G29 W I4 J2 Z-0.06102
+G29 W I5 J2 Z-0.02963
+G29 W I6 J2 Z-0.00078
+G29 W I7 J2 Z0.04854
+G29 W I8 J2 Z0.07690
+G29 W I0 J3 Z-0.00314
+G29 W I1 J3 Z0.06283
+G29 W I2 J3 Z0.09465
+G29 W I3 J3 Z0.13534
+G29 W I4 J3 Z-0.02637
+G29 W I5 J3 Z-0.05675
+G29 W I6 J3 Z-0.01711
+G29 W I7 J3 Z0.01784
+G29 W I8 J3 Z0.00917
+G29 W I0 J4 Z-0.04806
+G29 W I1 J4 Z-0.04720
+G29 W I2 J4 Z-0.06005
+G29 W I3 J4 Z-0.05120
+G29 W I4 J4 Z0.02739
+G29 W I5 J4 Z-0.04637
+G29 W I6 J4 Z-0.06721
+G29 W I7 J4 Z-0.07053
+G29 W I8 J4 Z-0.01161
+G29 W I0 J5 Z-0.13798
+G29 W I1 J5 Z-0.14100
+G29 W I2 J5 Z-0.15008
+G29 W I3 J5 Z-0.05940
+G29 W I4 J5 Z-0.10136
+G29 W I5 J5 Z-0.14809
+G29 W I6 J5 Z-0.13899
+G29 W I7 J5 Z-0.11336
+G29 W I8 J5 Z-0.08136
+G29 W I0 J6 Z-0.21392
+G29 W I1 J6 Z-0.16659
+G29 W I2 J6 Z-0.14126
+G29 W I3 J6 Z-0.10817
+G29 W I4 J6 Z-0.07305
+G29 W I5 J6 Z-0.06926
+G29 W I6 J6 Z-0.09987
+G29 W I7 J6 Z-0.14810
+G29 W I8 J6 Z-0.16898
+G29 W I0 J7 Z-0.24698
+G29 W I1 J7 Z-0.18421
+G29 W I2 J7 Z-0.10044
+G29 W I3 J7 Z-0.06357
+G29 W I4 J7 Z-0.07330
+G29 W I5 J7 Z-0.06194
+G29 W I6 J7 Z-0.06969
+G29 W I7 J7 Z-0.10397
+G29 W I8 J7 Z-0.18402
+G29 W I0 J8 Z-0.22925
+G29 W I1 J8 Z-0.12185
+G29 W I2 J8 Z-0.06316
+G29 W I3 J8 Z-0.05528
+G29 W I4 J8 Z-0.03478
+G29 W I5 J8 Z-0.03577
+G29 W I6 J8 Z-0.04237
+G29 W I7 J8 Z-0.05965
+G29 W I8 J8 Z-0.12802
+Endstop adjustment:
+M666 X0.00 Y-1.17 Z-0.29
+Delta settings: L<diagonal_rod> R<radius> H<height> S<segments_per_s> B<calibration radius> XYZ<tower angle corrections>
+M665 L268.50 R133.95 H287.85 S160.00 B96.00 X0.16 Y-0.06 Z-0.10
+Material heatup parameters:
+M145 S0 H210 B60 F0
+M145 S1 H240 B100 F0
+PID settings:  
+M301 P9.93 I0.43 D57.74
+M304 P372.21 I73.28 D472.61
+Z-Probe Offset (mm):
+M851 Z-14.61   
+Stepper driver current:
+M906 X800 Y800 Z800
+  M906 T0 E800 
+Hybrid Threshold:
+M913 X120 Y120 Z120
+  M913 T0 E7   
+Filament load/unload lengths:
+M603 L650.00 U750.00
+SD card ok     
 
 ==============================================================================
 
